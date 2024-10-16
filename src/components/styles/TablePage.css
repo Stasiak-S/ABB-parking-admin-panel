@@ -1,0 +1,132 @@
+.title {
+  color: rgb(255, 255, 255);
+  background-color: rgb(50, 50, 50);
+  padding: 40px;
+  font-family: Sans-Serif;
+  font-size: 50px;
+  text-align: center;
+}
+.body {
+  background-color: rgb(236, 236, 236);
+  height: fit-content;
+  width: 100%;
+  padding-bottom: 100px;
+}
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.table td,
+.table th {
+  padding: 8px;
+  border-bottom: #707070 2px solid;
+}
+
+.table tr {
+  background-color: #cecece;
+}
+
+.table tr:hover {
+  background-color: #b0b0b0;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #707070;
+  color: white;
+}
+img {
+  height: 70px;
+  float: left;
+}
+.btn-group .button {
+  margin-top: 50px;
+  background-color: rgb(50, 50, 50);
+  margin-right: 1px;
+  color: white;
+  padding: 18px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn-group .button:hover {
+  background-color: #444444;
+}
+.btn-group-new .button {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.btn-group-new .button:hover {
+  background-color: #444444;
+}
+.request {
+  width: 90%;
+  margin: auto;
+  background-color: #b0b0b0;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.request th {
+  background-color: rgb(50, 50, 50);
+  color: white;
+}
+.request td,
+.request th {
+  width: 50%;
+  padding: 15px;
+  font-size: 30px;
+}
+.requestRight {
+  background-color: #cecece;
+  border-bottom: 3px solid #6e6e6e;
+}
+
+.requestLeft {
+  background-color: #6e6e6e;
+  font-weight: bold;
+  border-bottom: 3px solid #cecece;
+}
+
+.error{
+  padding:100px;
+  font-size: 50px;
+}
+.nav-bar {
+  width: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+  font-family: Sans-Serif;
+  font-size: 30px;
+  text-align: center;
+  background-color: #B9B8C0;
+}
+
+.nav-bar li {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  text-align: center;
+  margin: 40px;
+  color: white;
+
+}
+
+.nav-bar li:hover {
+  text-decoration: underline;
+}
