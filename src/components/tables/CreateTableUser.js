@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import NewTable from "./CreateTableContent.js";
 import NewHeader from "./CreateTableHeader.js";
 import Error from "../elements/Error.js";
-
+import Button from "../elements/Button.js";
 function CreateTable(props){
- 
+ const page="users"
   const [message, setMessage] = useState([{}]);
 
   useEffect(() => {
@@ -24,7 +24,9 @@ function CreateTable(props){
   }, []);
 if(Object.keys(message).length!==0)  
   {
-    const DisplayContents =message.map((item, index) => NewTable(item, index, props.name, props.CheckBoxOnChange));
+
+    const DisplayContents =message.map((item, index) => NewTable(item, index, props.name, props.CheckBoxOnChange, page));
+
     const DisplayHeaders= Object.keys(message[0]).map((key) =>NewHeader(key)); 
     return(
       <div>
@@ -33,6 +35,8 @@ if(Object.keys(message).length!==0)
             <tr>
               <th></th>
               {DisplayHeaders}
+              <th><Button name="Filtruj"/></th>
+
             </tr>
           </thead>
           <tbody>{DisplayContents}</tbody>

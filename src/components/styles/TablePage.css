@@ -104,3 +104,29 @@ img {
   padding:100px;
   font-size: 50px;
 }
+.nav-bar {
+  width: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+  font-family: Sans-Serif;
+  font-size: 30px;
+  text-align: center;
+  background-color: #B9B8C0;
+}
+
+.nav-bar li {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  text-align: center;
+  margin: 40px;
+  color: white;
+
+}
+
+.nav-bar li:hover {
+  text-decoration: underline;
+}

@@ -1,4 +1,3 @@
-
 import Display from "./DisplayTableRequest";
 import React from "react";
 import ButtonGroup from "../groupElements/ButtonGroup2";
