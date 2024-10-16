@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/TablePage.css";
+
 import NavBar from "../groupElements/Navbar.js";
 import CreateTableRequest from "../tables/CreateTableRequest.js";
 const RequestBody = () => {

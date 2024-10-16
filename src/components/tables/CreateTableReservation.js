@@ -5,6 +5,7 @@ import Error from "../elements/Error.js";
 import Button from "../elements/Button.js";
 function CreateTable(props){
   const page="reservations"
+
   const [message, setMessage] = useState([{}]);
 
   useEffect(() => {
@@ -23,7 +24,9 @@ function CreateTable(props){
     getData();
   }, []);
 if(Object.keys(message).length!==0)  
+
     {const DisplayContents =message.map((item, index) => NewTable(item, index, props.name, props.CheckBoxOnChange, page));
+
     const DisplayHeaders= Object.keys(message[0]).map((key) =>NewHeader(key)); 
     return(
       <div>
@@ -33,6 +36,7 @@ if(Object.keys(message).length!==0)
               <th></th>
               {DisplayHeaders}
               <th><Button name="Filtruj"/></th>
+
             </tr>
           </thead>
           <tbody>{DisplayContents}</tbody>
