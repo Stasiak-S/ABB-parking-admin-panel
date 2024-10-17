@@ -36,7 +36,7 @@ useEffect(() => {
     getData();
   }, []);
     function Event(){
-        if(props.click==="edit")
+      if(props.click==="edit")
             {Edit() }
         else if(props.click==="delete")
             {Delete()}
@@ -55,13 +55,16 @@ useEffect(() => {
         }      
   }
   function Delete(){
+    if (window.confirm('Czy napewno chcesz usunąć dane?')) {
     if(props.page==='users')
     {DeleteUser()}
     else if(props.page==='reservations'){
     DeleteReservation()
     }
 }
+}
 function Add(){
+      console.log("działa")
     if(props.page==='users')
     {AddUser()
     }
@@ -70,12 +73,15 @@ function Add(){
     }
 }
 function DeleteCheckbox(){
+      if (window.confirm('Czy napewno chcesz usunąć dane?')) {
     if(props.page==='users')
     {DeleteCheckboxUser()}
     else if(props.page==='reservations'){
     DeleteCheckboxReservation()
     }
 }
+}
+//Działa
 function EditUser() {
           let UpdatedUserEmail = prompt("Wprowadź nowy email użytkownika", AllUsersData[props.value].email);
           if (UpdatedUserEmail !== null || UpdatedUserEmail !== "") {
@@ -90,14 +96,10 @@ function EditUser() {
                             user_id:AllUsersData[props.value].id
                       }),
                     })
-                    .then(function (response) {
-                      console.log(response);
-                })
-                .catch(function (error) {
-                      console.log(error);
-                });
           
-          }}
+          }
+      }
+
 function EditReservation(){
    
           let UpdatedReservationDate = prompt("Wprowadź nową datę rezerwacji", AllReservationsData[props.value].date_of_reservation);
@@ -115,13 +117,6 @@ function EditReservation(){
                             reservation_date_status_id:AllReservationsData[props.value].status_id
                       }),
                     })
-                    .then(function (response) {
-                      console.log(response);
-                })
-                .catch(function (error) {
-                      console.log(error);
-                });
-    
     
     }}
     function DeleteUser() {
@@ -135,12 +130,6 @@ function EditReservation(){
                           id:AllUsersData[props.value].id
                     }),
             })
-            .then(function (response) {
-                  console.log(response);
-            })
-            .catch(function (error) {
-                  console.log(error);
-            });
         }
         function DeleteReservation(){
                   fetch('http://localhost:5000/admin/post/receiveRemoveData', {
@@ -153,12 +142,6 @@ function EditReservation(){
                               id:AllReservationsData[props.value].id
                         }),
                 })
-                .then(function (response) {
-                      console.log(response);
-                })
-                .catch(function (error) {
-                      console.log(error);
-                });
             
             }
             function DeleteCheckboxUser(){
@@ -175,12 +158,6 @@ function EditReservation(){
                                   id:AllReservationsData[i].id
                             }),
                     })
-                    .then(function (response) {
-                          console.log(response);
-                    })
-                    .catch(function (error) {
-                          console.log(error);
-                    });
                 
                 }}}
   function DeleteCheckboxReservation(){
@@ -197,12 +174,6 @@ function EditReservation(){
                           id:AllReservationsData[i].id
                     }),
             })
-            .then(function (response) {
-                  console.log(response);
-            })
-            .catch(function (error) {
-                  console.log(error);
-            });
         
         }}}
         function AddUser(){
@@ -224,23 +195,17 @@ function EditReservation(){
                         }),
                         
                 })
-                  .then(function (response) {
-                        console.log(response);
-                  })
-                  .catch(function (error) {
-                        console.log(error);
-                  });
             }
           
       }
-//Will think about it
+
       function AddReservation(){
             let NewReservationDate = prompt("Dane ", "");
             let NewReservationMonth = prompt("Dane ", "");
             let NewReservationId = prompt("Dane ", "");
 
-            if (NewReservationDate !== null || NewReservationDate !== ""|| NewReservationDate !== null|| NewReservationMonth !== "") {
-                   /*fetch('http://localhost:5000/admin/post/receiveNewReservationData', {
+            if (NewReservationDate !== null || NewReservationDate !== ""|| NewReservationMonth !== null|| NewReservationMonth !== ""|| NewReservationId !== null|| NewReservationId !== "") {
+                   fetch('http://localhost:5000/admin/post/receiveNewReservationData', {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',
@@ -251,18 +216,8 @@ function EditReservation(){
                         id:NewReservationId
                         }),
                 })
-                .then(function (response) {
-                      console.log(response);
-                })
-                .catch(function (error) {
-                      console.log(error);
-                });*/
             }
       }
-
-
-
-
     return (<button className="button" onClick={Event} page={props.page} id={props.id} value={props.value}>{props.name}</button>);
 }
 export default Button;
