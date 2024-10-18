@@ -1,9 +1,14 @@
 import React from "react";
+import Error from "../elements/Error.js";
 import {useState} from "react";
 import ButtonGroup from "../groupElements/ButtonGroup.js";
 import CreateTable from "../tables/CreateTable";
  function Pagiton(props){
+
     const [numbers, setNumbers]=useState(0);
+    if(Object.keys(props.PageInfo).length!==0)  
+        {
+    
      if(numbers<0){setNumbers(0)}
      else if (numbers>(Math.ceil(props.PageInfo.length/props.CountPages))-1){setNumbers(numbers-1)}
      let LoadedTable=props.PageInfo.slice(numbers*props.CountPages, (numbers+1)*props.CountPages);
@@ -12,7 +17,7 @@ import CreateTable from "../tables/CreateTable";
         { buttons.push(
         <button className="paginationButton" onClick={()=>setNumbers(i)} key={i}>{i+1}</button>
     )};
-        return (     
+return (     
         <div>
                 
                 <CreateTable name={props.name} message={LoadedTable} page={props.Page}/>
@@ -27,8 +32,15 @@ import CreateTable from "../tables/CreateTable";
                 <button className="paginationButton" id="last" onClick={()=>setNumbers(Math.ceil(props.PageInfo.length/props.CountPages)-1)}>Last</button>       
                 </div>
                 <p className="paginationText">Pokazano {LoadedTable.length} z {props.PageInfo.length} rekordów</p>
-                <ButtonGroup page={props.page}/>
+                <ButtonGroup page={props.Page} isDisabled={false}/>
                 </div>
                 </div>
                 ); }
+                else{  return(
+                    <div>
+                        <Error text="Chwilowo nie ma żadnych rekordów"/>
+                        <ButtonGroup page={props.Page} isDisabled={true}/>
+                    </div>
+                  )}
+            }
 export default Pagiton

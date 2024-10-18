@@ -1,7 +1,6 @@
 import React from "react";
 import NewTable from "./CreateTableContent.js";
 import NewHeader from "./CreateTableHeader.js";
-import Error from "../elements/Error.js";
 import Button from "../elements/Button.js";
 function CreateTable(props){
 if(Object.keys(props.message).length!==0)  
@@ -21,10 +20,7 @@ if(Object.keys(props.message).length!==0)
         </table>
         </div>
         );}
-else{
-  return(
-    <Error text="Chwilowo nie ma żadnej rezerwacji"/>
-  );
+else{;
 }
 }
 export default CreateTable

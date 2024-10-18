@@ -4,12 +4,12 @@ import {useState, useEffect} from "react";
 import NavBar from "../groupElements/Navbar.js";
 import Pagiton from "../elements/paginator.jsx";
 const ReservationBody=()=>{
-  const page="reservations"
+  const page="ReservationsDates"
   const [message, setMessage] = useState([{}]);
 
   useEffect(() => {
     const getData = async () => {
-      const url = "http://localhost:5000/admin/get/allReservationsDates";
+      const url = "http://localhost:5000/admin/get/all"+page;
   
       try {
         const resp = await fetch (url);

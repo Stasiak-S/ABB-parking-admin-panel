@@ -8,8 +8,8 @@ function NewTable(item, index, name, onChange, page){
           {Object.keys(item).map((key) => (
             DisplayContent(key, item, index)
           ))}
-          <td><Button name="Usuń" click={`delete`} page={page} id={`button`} value={index}/>
-          <Button name="Edytuj" click={`edit`} page={page} id={`button`} value={index}/></td>
+          <td><Button name="Usuń" click="delete" page={page} id={`button`} value={index}/>
+          <Button name="Edytuj" click="edit" page={page} id={`button`} value={index}/></td>
           
         </tr>
       );

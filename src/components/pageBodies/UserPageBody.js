@@ -4,12 +4,12 @@ import {useState, useEffect} from "react";
 import NavBar from "../groupElements/Navbar.js";
 import Pagiton from "../elements/paginator.jsx";
 const UserBody=()=>{
-  const page="users"
+  const page="Users"
   const [message, setMessage] = useState([{}]);
 
   useEffect(() => {
     const getData = async () => {
-      const url = "http://localhost:5000/admin/get/allUsers";
+      const url = "http://localhost:5000/admin/get/all"+page;
   
       try {
         const resp = await fetch (url);
@@ -26,7 +26,7 @@ const UserBody=()=>{
     <div>
       <div className="body">
         <NavBar/>
-        <Pagiton name="checkbox" CountPages={5} PageInfo={message} Page={page}/>
+        <Pagiton name="checkbox" CountPages={10} PageInfo={message} Page={page}/>
       </div>
     </div>
   );
