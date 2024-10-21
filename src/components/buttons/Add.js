@@ -1,6 +1,7 @@
-
-function AddData(page){
-    if(page==="Users"){
+//nie działa
+function AddData(props){
+  function ClickEvent(){
+    if(props.page==="Users"){
         let NewUserEmail = prompt("Wprowadź email nowego użytkownika", "");
         let NewUserPriority = prompt("Wprowadź priorytet nowego użytkownika", "1");
         if (NewUserEmail !== null || NewUserEmail !== ""||NewUserPriority!==null||NewUserPriority!=="") {
@@ -15,11 +16,13 @@ function AddData(page){
                     }),
                     
             })
+            window.location.reload(); 
         }
     }
-    else{let NewReservationDate = prompt("Dane ", "");
-        let NewReservationMonth = prompt("Dane ", "");
-        let NewReservationId = prompt("Dane ", "");
+    else if(props.page==="ReservationsDates")
+      {let NewReservationDate = prompt("Wprowadź datę rezerwacji", "");
+        let NewReservationMonth = prompt("Wprowadź miesiąc rezerwacji", "");
+        let NewReservationId = prompt("Wprowadź id rezerwacji ", "");
 
         if (NewReservationDate !== null || NewReservationDate !== ""|| NewReservationMonth !== null|| NewReservationMonth !== ""|| NewReservationId !== null|| NewReservationId !== "") {
                fetch('http://localhost:5000/admin/post/receiveNewReservationData', {
@@ -33,8 +36,10 @@ function AddData(page){
                     id:NewReservationId
                     }),
             })
-        
+            window.location.reload(); 
         }
     }
+  }
+    return (<button className="button" onClick={ClickEvent} page={props.page} id={props.id} value={props.value}>{props.name}</button>);
   }
     export default AddData

@@ -1,7 +1,13 @@
-
-function DeleteCheckboxData(page, Data){
-    let DataTable=""
-    if(page==="Users"){DataTable="users"}
+import GetData from "./GetData";
+import GetDataRequest from "./GetDataRequest";
+function DeleteCheckboxData(props){
+  let DataTable=""
+  let Data
+  if(props.page==="ReservationsDates2"){Data=GetDataRequest("ReservationsDates")}
+  else{Data=GetData(props.page)}
+  function ClickEvent(){
+  
+    if(props.page==="Users"){DataTable="users"}
     else{DataTable="reservations"}
     let checkboxes = document.getElementsByName('checkbox');
     for (var i = 0; i < checkboxes.length; i++) {
@@ -16,6 +22,10 @@ function DeleteCheckboxData(page, Data){
                       id:Data[i].id
                 }),
         })
-    
-    }}}
+      }
+    }window.location.reload();
+   } 
+   return (<button className="button" onClick={ClickEvent} page={props.page} id={props.id} value={props.value}>{props.name}</button>);
+  }
+
     export default DeleteCheckboxData

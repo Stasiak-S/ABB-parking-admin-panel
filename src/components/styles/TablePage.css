@@ -19,11 +19,7 @@ button{
 }
 
 .table tr {
-  background-color: #cecece;
-}
-
-.table tr:hover {
-  background-color: #b0b0b0;
+  background-color: #e1e1e1;
 }
 
 .table th {
@@ -33,9 +29,21 @@ button{
   background-color: #707070;
   color: white;
 }
-img {
-  height: 70px;
-  float: left;
+.LittleButton{
+  height: 50px;
+  width:50px;
+}
+  img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:auto;
+  height:28px;
+  width:28px}
+
+.LittleImg{
+  height: 35px;
+  width: 35px;
 }
 .btn-group{
   margin-top: 10px;
@@ -57,46 +65,7 @@ img {
 .btn-group .button:hover {
   background-color: #444444;
 }
-.btn-group-new .button {
-  background-color: rgb(50, 50, 50);
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 40px;
-}
 
-.btn-group-new .button:hover {
-  background-color: #444444;
-}
-.request {
-  width: 90%;
-  margin: auto;
-  background-color: #b0b0b0;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-.request th {
-  background-color: rgb(50, 50, 50);
-  color: white;
-}
-.request td,
-.request th {
-  width: 50%;
-  padding: 15px;
-  font-size: 30px;
-}
-.requestRight {
-  background-color: #cecece;
-  border-bottom: 3px solid #6e6e6e;
-}
-
-.requestLeft {
-  background-color: #6e6e6e;
-  font-weight: bold;
-  border-bottom: 3px solid #cecece;
-}
 
 .error{
   padding:100px;
@@ -124,9 +93,6 @@ img {
 
 }
 
-.nav-bar li:hover {
-  text-decoration: underline;
-}
 .pagination{
   display: flex;
   margin-left: 10px;

@@ -1,20 +1,29 @@
 import React from "react";
-import Button from "../elements/Button.js"
+import AddData from "../buttons/Add";
+import DeleteCheckboxData from "../buttons/DeleteCheckbox.js";
+import AcceptCheckboxData from "../buttons/AcceptCheckBox.js";
 function ButtonGroup(props){  
-      if(props.isDisabled===false){
+      if(props.isRequest&&!props.isDisabled){
+            return (
+            <div className="btn-group">
+            <AcceptCheckboxData name="Akceptuj" page={props.page}/>
+            <DeleteCheckboxData name="Odmów" page={props.page}/>
+            </div>
+            );
+      }
+      else if(props.isDisabled){
     return (
           <div className="btn-group">
-          <Button name="Dodaj" click="add" page={props.page}/>
-          <Button name="Usuń" click="deleteCheckbox" page={props.page}/>
+          <AddData name="Dodaj" page={props.page}/>
           </div>
     );
 }
-else{
       return (
             <div className="btn-group">
-            <Button name="Dodaj" click="add" page={props.page}/>
+            <AddData name="Dodaj" page={props.page}/>
+            <DeleteCheckboxData name="Usuń" page={props.page}/>
             </div>)
-}
+
   }
   
   export default ButtonGroup;

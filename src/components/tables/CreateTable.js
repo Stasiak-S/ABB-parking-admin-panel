@@ -1,10 +1,10 @@
 import React from "react";
 import NewTable from "./CreateTableContent.js";
 import NewHeader from "./CreateTableHeader.js";
-import Button from "../elements/Button.js";
 function CreateTable(props){
-if(Object.keys(props.message).length!==0)  
-    {const DisplayContents =props.message.map((item, index) => NewTable(item, index, props.name, props.CheckBoxOnChange, props.page));
+
+    
+const DisplayContents =props.message.map((item, index) => NewTable(item, index, props.name, props.CheckBoxOnChange, props.page));
     const DisplayHeaders= Object.keys(props.message[0]).map((key) =>NewHeader(key)); 
     return(
       <div>
@@ -13,14 +13,12 @@ if(Object.keys(props.message).length!==0)
             <tr>
               <th></th>
               {DisplayHeaders}
-              <th><Button name="Filtruj"/></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>{DisplayContents}</tbody>
         </table>
         </div>
-        );}
-else{;
-}
+        );
 }
 export default CreateTable
